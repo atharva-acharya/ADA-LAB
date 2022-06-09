@@ -4,12 +4,20 @@
 
 int linearSearch(int array[], int size, int key)
 {   
-    for (int i = 0; i < size; i++)  
-    {  delay();
-        if (array[i] == key)  
-        return i+1;  
-    }  
-  return -1;  
+    int location, i, j;
+    delay();
+    if (array[size] == key)
+    {   
+        return size;
+    }
+    else if (size == -1)
+    {
+        return -1;
+    }
+    else
+    {
+        return (location = linearSearch(array, size - 1, key));
+    }
 }
 
 
@@ -39,7 +47,7 @@ int binarySearch(int arrb[], int b, int key, int e)
 void delay()
 {
     unsigned long int j,temp;
-    for(j=0;j<50000;j++)
+    for(j=0;j<50000000;j++)
     temp=39/550;
 }
 
